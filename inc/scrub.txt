@@ -1,0 +1,19 @@
+# First line: source directory		Second line: target directory. WILL BE OVERWRITTEN!
+/mnt/scripts/template
+/home/work/template.clean
+# rest of the lines are "OLD WORD" "NEW WORD"
+BGSTACK15	BGSTACK15
+Bgstack15	Bgstack15
+bgstack15 bgstack15
+bgstackness bgstackness
+gstack15	gstack15
+GSTACK15	GSTACK15
+User1	User1
+user1	user1
+"Some State"	"Some State"
+"Default City"	"Default City"
+"Default Company Ltd"	"Default Company Ltd"
+example	example
+EXAMPLE	EXAMPLE
+".com"	".com"
+"203.0."		"203.0."

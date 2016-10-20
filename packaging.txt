@@ -1,0 +1,30 @@
+File: /root/packaging.txt
+Package: deployscripts.tgz
+Author: bgstack15
+Startdate: 2016-10-20
+Title: Packaging information for deployscripts.tgz
+Purpose: To describe how these scripts are stored, packaged, and deployed
+History: 2014 I wrote shell scripts (adapting from a previous person's source scripts) that automate hard-coded information for a server
+Usage:
+Reference: bgscripts README.txt
+   "Building the Centos 7 Template.docx"
+Improve:
+Document: Below this line
+
+### PACKAGING the deployscripts in a tgz
+( cd /mnt/scripts/template && rm -rf deployscripts.tgz && tar -zcf deployscripts.tgz .makecert.exp updateval.sh s*sh; )
+
+### DEPLOYING from nfs hosted tgz
+tar -zxC /root -f /mnt/scripts/template/deployscripts.tgz
+
+### DEPLOYING from scp tgz
+scp -pr norite:/mnt/scripts/template/deployscripts.tgz /root
+
+tar -zxC /root -f /root/deployscripts.tgz
+
+### PACKAGING in a MASTER tgz
+# This includes the git information and auxiliary info
+mtgz=/mnt/scripts/template/deployscripts.master.tgz
+rm "${mtgz}"
+( cd $( dirname ${mtgz} ); 
+tar -X /mnt/scripts/template/.gitignore --no-recursion -zc -f "${mtgz}" * .makecert.exp )
