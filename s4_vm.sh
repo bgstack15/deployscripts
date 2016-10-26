@@ -6,6 +6,7 @@
 # Title: Template Script 4: General Settings
 # Purpose: Do initial hard-coded configs
 # History: 2016-05-19 given original headers
+#    2016-10-26 fixed freebsd variables
 # Usage: ./s4[tab][enter]
 # Reference: Original vm.sh script by user1
 # Improve:
@@ -27,7 +28,7 @@ case "${flavor}" in
    freebsd)
       templatename=freebsd10alpha
       keyfile=/etc/ssl/localhost.key
-      keyfile=/etc/ssl/localhost.crt
+      certfile=/etc/ssl/localhost.crt
       ;;
    *) echo "Assuming centos directory layout for certificates..."
       templatename=unspecified0alpha
